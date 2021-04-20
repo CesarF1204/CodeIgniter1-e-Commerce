@@ -1,0 +1,75 @@
+.container {
+	border: 5px solid black;
+	width: 650px;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 0 20px 20px;
+	background-color: whitesmoke;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+}
+h1, h3 {
+	text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+tbody tr:hover {
+    background-color: #d8d8d8;
+    transition: 0.3s ease;
+}
+form {
+	display: block;
+	margin-left: 170px;
+	margin-bottom: 20px;
+}
+input {
+	display: block;
+	margin-bottom: 10px;
+}
+input[type='text']{
+	display: block;
+    background: none;
+    color: black;
+    border: 1px solid teal;
+    padding: 5px 6px;
+    width: 250px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+input[type='text']:focus{
+    background: none;
+    border: 1px solid teal;
+    color: black;
+    padding: 5px 6px;
+    width: 280px;
+    transition: 0.5s ease;
+}
+input[type='submit'].delete-item {
+	display: block;
+    margin: auto;
+    border: 1px solid black;
+    padding: 8px 15px;
+    box-shadow: 3px 3px #000;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+input[type='submit'].order-item {
+    border: 1px solid black;
+    padding: 8px 15px;
+    box-shadow: 3px 3px #000;
+    background-color: #2b78e4;
+    color: white;
+    cursor: pointer;
+}
+span, p.deleted{
+    text-align: center;
+    color: red;
+}
