@@ -28,6 +28,7 @@
 ?>
 				<tr>
 					<form action="/products/delete" method="post">
+						<input type="hidden" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
 						<input type="hidden" name="product_id" value="<?= $id ?>">
 						<td><?= $qty ?></td>
 						<td><?= $get_each_product[$id]['description'] ?></td>
@@ -43,6 +44,7 @@
 <?= "<span>".$this->session->flashdata('client_errors')."</span>" ?>
         <h1>Billing Info: </h1>
         <form action="/products/order" method="post">
+        	<input type="hidden" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
             <label for="first_name">First Name: </label>
             <input type="text" name="first_name" id="first_name">
 

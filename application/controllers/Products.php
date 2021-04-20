@@ -18,6 +18,10 @@ class Products extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct() {
+		parent::__construct();
+		$this->load->helper('security');
+	}
 	public function index(){
 		$cart = $this->session->userdata('cart');
 		if(!empty($cart)){
@@ -51,6 +55,7 @@ class Products extends CI_Controller {
 				}
 			$this->session->set_userdata('cart', $cart);
 		}
+		$data = $this->security->xss_clean($data);
 		redirect(base_url());
 	}
 	public function cart() {
@@ -95,6 +100,7 @@ class Products extends CI_Controller {
         		$this->session->set_flashdata('added', '<p class="added">Your order was successfully added!</p>');
         	}
         }
+        $data = $this->security->xss_clean($data);
         $this->session->unset_userdata('cart');
         redirect(base_url());
 	}

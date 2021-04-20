@@ -28,6 +28,7 @@
 <?php	foreach($get_each_product as $product) { ?>
 			<tr>
 			<form action="/products/add_to_cart" method='POST'>
+				<input type="hidden" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>" />
 				<input type="hidden" name="product_id" value="<?= $product['id'] ?>">
 				<td> <?= $product['description'] ?></td>
 				<td> <?= $product['price'] ?> </td>
